@@ -68,3 +68,14 @@ print(jana.get_address())
 
 
 
+"""
+objekt
+třída
+instance
+atribut
+metoda
+
+abstrakce
+dědění
+zapouzdření
+"""
