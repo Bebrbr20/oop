@@ -20,9 +20,6 @@ class Osobka:
     def Validate(self):
         return True
 
-    def registrace_dd(self):
-        return True
-
 class DomovDuchodcu:
     """
             Class that represents retirement home
@@ -32,11 +29,17 @@ class DomovDuchodcu:
         self.ico = ico
         self.nazev = nazev
         self.kapacita = kapacita
+        self.klienti = []
 
     def __str__(self):
         return "Název zařízení" + self.nazev
 
+    def registrace_dd(self, klienti):
+        self.klienti.append(klienti)
 
+    def volna_mista(self):
+        cap = (self.kapacita - len(self.klienti))
+        print ("Počet volných míst je " + str(cap))
 class Adreska:
     """
             Class that represents persons address
@@ -54,14 +57,14 @@ class Adreska:
     def Validate(self):
             return True
 
-klienti = []
 
 peter = Osobka("Peter", "Parker", 123456789, "0711044719", 1910, "Muž")
 jana = Osobka("Jana", "Bránková", 123456789, "0711044719", 1920, "Atraktivní žena")
 adresa1 = Adreska("Novoborská 2", "Praha", "Czechia", 19000)
-domov1 = DomovDuchodcu("05159822", "Domov sv. Jany Beránkové", "1000")
+domov1 = DomovDuchodcu("05159822", "Domov sv. Jany Beránkové", 1000)
 
-klienti.append(peter)
-klienti.append(jana)
+domov1.registrace_dd(peter)
+domov1.registrace_dd(jana)
 
+domov1.volna_mista()
 print(peter.get_age())
