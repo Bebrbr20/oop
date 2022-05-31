@@ -20,6 +20,7 @@ class Osobka:
     def Validate(self):
         return True
 
+
 class DomovDuchodcu:
     """
             Class that represents retirement home
@@ -40,6 +41,8 @@ class DomovDuchodcu:
     def volna_mista(self):
         cap = (self.kapacita - len(self.klienti))
         print ("Počet volných míst je " + str(cap))
+
+
 class Adreska:
     """
             Class that represents persons address
@@ -67,4 +70,4 @@ domov1.registrace_dd(peter)
 domov1.registrace_dd(jana)
 
 domov1.volna_mista()
-print(peter.get_age())
+
