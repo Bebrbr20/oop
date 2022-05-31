@@ -30,6 +30,7 @@ class DomovDuchodcu:
         self.ico = ico
         self.nazev = nazev
         self.kapacita = kapacita
+        self.__adreska = None
         self.klienti = []
 
     def __str__(self):
@@ -40,8 +41,13 @@ class DomovDuchodcu:
 
     def volna_mista(self):
         cap = (self.kapacita - len(self.klienti))
-        print ("Počet volných míst je " + str(cap))
+        print("Počet volných míst v " + self.nazev + " je "+ str(cap))
 
+    def set_address(self, _adreska):
+        self.__adreska = _adreska
+
+    def get_address(self):
+        print(self.nazev + " je " + str(self.__adreska))
 
 class Adreska:
     """
@@ -55,7 +61,7 @@ class Adreska:
         self.psc = psc
 
     def __str__(self):
-        return "Nacházím se v" + self.mesto
+        return "v " + self.mesto
 
     def Validate(self):
             return True
@@ -63,11 +69,26 @@ class Adreska:
 
 peter = Osobka("Peter", "Parker", 123456789, "0711044719", 1910, "Muž")
 jana = Osobka("Jana", "Bránková", 123456789, "0711044719", 1920, "Atraktivní žena")
+michaela = Osobka("Michaela", "Moniková", 987654321, "0711044719", 1500, "Není známo")
+iveta = Osobka("Iveta", "Bráberolá", 123456789, "0711044719", 2000, "Velice atraktivní žena")
+
 adresa1 = Adreska("Novoborská 2", "Praha", "Czechia", 19000)
+adresa2 = Adreska("Nymburská 68", "Poděbrady", "Czechia", 29001)
+
 domov1 = DomovDuchodcu("05159822", "Domov sv. Jany Beránkové", 1000)
+domov2 = DomovDuchodcu("05157622", "Domov sv. Lucie Ubrouskové", 100)
 
 domov1.registrace_dd(peter)
-domov1.registrace_dd(jana)
+domov1.registrace_dd(michaela)
+domov1.registrace_dd(iveta)
+domov2.registrace_dd(jana)
+
+domov1.set_address(adresa1)
+domov2.set_address(adresa2)
+
+
+domov1.get_address()
+domov2.get_address()
 
 domov1.volna_mista()
-
+domov2.volna_mista()
