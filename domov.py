@@ -31,16 +31,16 @@ class DomovDuchodcu:
         self.nazev = nazev
         self.kapacita = kapacita
         self.__adreska = None
-        self.klienti = []
+        self.__klienti = []
 
     def __str__(self):
         return "Název zařízení" + self.nazev
 
     def registrace_dd(self, klienti):
-        self.klienti.append(klienti)
+        self.__klienti.append(klienti)
 
     def volna_mista(self):
-        cap = (self.kapacita - len(self.klienti))
+        cap = (self.kapacita - len(self.__klienti))
         print("Počet volných míst v " + self.nazev + " je "+ str(cap))
 
     def set_address(self, _adreska):
@@ -51,7 +51,7 @@ class DomovDuchodcu:
 
     def get_klients(self):
         print("\n V " + self.nazev + " jsou : " )
-        for klient in self.klienti:
+        for klient in self.__klienti:
             print(" - " + klient.jmeno, klient.prijmeni)
 
 

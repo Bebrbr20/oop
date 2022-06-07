@@ -1,31 +1,29 @@
-def ucase(text):
-    return text.upper()
-
-print(ucase("\n  ahoj"))
-
-
-class Geeks:
+class Person:
     def __init__(self):
-        self._age = 0
+        self.__money = 0
 
-    # using property decorator
-    # a getter function
+    def set_money(self, amount):
+        self.__money += amount
+
+    def get_money(self):
+        return self.__money
+
+p1 = Person()
+p1. set_money(100)
+p1.get_money()
+
+class Person:
+    def __init__(self):
+        self.__money = 0
+
     @property
-    def age(self):
-        print("getter method called")
-        return self._age
+    def money(self):
+        return self.__money
 
-    # a setter function
-    @age.setter
-    def age(self, a):
-        if (a < 18):
-            raise ValueError("Sorry you age is below eligibility criteria")
-        print("setter method called")
-        self._age = a
+    @money.setter
+    def money(self, amount):
+        self.__money += amount
 
-
-mark = Geeks()
-
-mark.age = 18
-
-print(mark.age)
+p2 = Person()
+p2.money = 100
+p2.money
