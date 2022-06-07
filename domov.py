@@ -77,12 +77,11 @@ peter = Osobka("Peter", "Parker", 123456789, "0711044719", 1910, "Muž")
 jana = Osobka("Jana", "Bránková", 123456789, "0711044719", 1920, "Atraktivní žena")
 michaela = Osobka("Michaela", "Moniková", 987654321, "0711044719", 1500, "Není známo")
 iveta = Osobka("Iveta", "Bráberolá", 123456789, "0711044719", 2000, "Velice atraktivní žena")
-
 adresa1 = Adreska("Novoborská 2", "Praha", "Czechia", 19000)
 adresa2 = Adreska("Nymburská 68", "Poděbrady", "Czechia", 29001)
-
 domov1 = DomovDuchodcu("05159822", "Domov sv. Jany Beránkové", 1000)
 domov2 = DomovDuchodcu("05157622", "Domov sv. Lucie Ubrouskové", 100)
+
 
 #registrace do domova důchodců
 
