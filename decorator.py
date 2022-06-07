@@ -31,6 +31,7 @@ class Person:
 
 p2 = Person()
 p2.money = 100
+p2.money = -10
 p2.money
 
 print(p2.age)
