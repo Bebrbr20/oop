@@ -23,7 +23,10 @@ class Person:
 
     @money.setter
     def money(self, amount):
-        self.__money += amount
+        if amount > 0:
+            self.__money += amount
+        else:
+            print("error")
 
     @property
     def age(self):
