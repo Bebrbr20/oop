@@ -12,7 +12,7 @@ class Osobka:
         self.pohlavi = pohlavi
 
     def __str__(self):
-        return "Hello I am " + self.jmeno
+        return self.jmeno
 
     def get_age(self):
         return 2022 - self.__datum_narozeni
@@ -49,6 +49,12 @@ class DomovDuchodcu:
     def get_address(self):
         print(self.nazev + " je " + str(self.__adreska))
 
+    def get_klients(self):
+        print("\n V " + self.nazev + " jsou : " )
+        for klient in self.klienti:
+            print(" - " + klient.jmeno, klient.prijmeni)
+
+
 class Adreska:
     """
             Class that represents persons address
@@ -79,16 +85,25 @@ domov1 = DomovDuchodcu("05159822", "Domov sv. Jany Beránkové", 1000)
 domov2 = DomovDuchodcu("05157622", "Domov sv. Lucie Ubrouskové", 100)
 
 domov1.registrace_dd(peter)
+
 domov1.registrace_dd(michaela)
+
 domov1.registrace_dd(iveta)
+
 domov2.registrace_dd(jana)
 
 domov1.set_address(adresa1)
+
 domov2.set_address(adresa2)
 
-
 domov1.get_address()
+
 domov2.get_address()
 
 domov1.volna_mista()
+
 domov2.volna_mista()
+
+domov1.get_klients()
+
+domov2.get_klients()
